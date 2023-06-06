@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
-// const User = require('./model/user.model');
 const userController = require('./controller/user.controller')
 const app = express();
 const port = 3000;

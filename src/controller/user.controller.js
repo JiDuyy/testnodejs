@@ -44,4 +44,15 @@ const deleteUser = async (userId, io) => {
   }
 };
 
-module.exports = { getUsers, createUser, updateUser, deleteUser };
+const updateRoom = async (userId, io) => {
+  // Cập nhật trường room của user có _id là userId
+  try {
+    const result = await User.updateOne({ _id: userId }, { $set: { room: "1234" } });
+    console.log('Updated user:', result);
+  } catch (err) {
+    console.log(err);
+  }
+
+}
+
+module.exports = { getUsers, createUser, updateUser, deleteUser, updateRoom };
